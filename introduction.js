@@ -80,3 +80,122 @@ function add(num1, num2) {
   return num1 + num2;
 }
 console.log(add(5, 15));
+
+function greet(firstName, lastName, honorific, greeting) {
+  return `${greeting} ${honorific} ${lastName}! I'm extremly glad you could join us, ${firstName}! I hope enjoy your stay here, ${honorific} ${lastName}`;
+}
+console.log(greet(`Sergey`, `Trifonov`, `The Great`, `Greetings`));
+
+const myHomeCity = `Ruzaevka`;
+const myRegion = `Mordovia republic`;
+const myCountry = `Russian Federation`;
+
+function logOutYourHome(city, region, country) {
+  console.log(`You are from${city}, ${region}, ${country}`);
+}
+logOutYourHome(myHomeCity, myRegion, myCountry);
+
+let something = `outside the function`;
+
+function thing() {
+  let something = `out of the scope`;
+  if (true) {
+    let something = `inside the scope`;
+    console.log(something);
+  }
+  console.log(something);
+}
+
+thing();
+
+console.log(something);
+
+const wierdsentence = `ToO MucH FooLS ANd IdIOTs evErYWheRE`;
+console.log(wierdsentence.toLowerCase());
+
+console.log(Math.round(5.1));
+console.log(Math.floor(5.7));
+console.log(Math.ceil(5.1));
+
+const someName = `FreedomTOEveryOne`;
+console.log(someName.substring(0, 3));
+function firstThreeLetters(word) {
+  let correctFirstThree = word.substring(0, 3);
+}
+
+const person = {
+  name: `Sergei Trifonov`,
+  city: `Ruzaevka`,
+  region: `Mordovia`,
+  favouriteFood: `Spagetti`,
+  wantsShrimpsRightNow: true,
+  numberOfShrimps: 100,
+};
+console.log(person);
+console.log(person.name);
+console.log(person[`name`]);
+
+const person1 = {
+  name: `Brian Holt`,
+  ageRange: `25-35`,
+};
+
+const person2 = {
+  name: `Britney Mars`,
+  ageRange: `45-65`,
+};
+
+function suggestMusic(anyPerson) {
+  if (anyPerson.ageRange === `25-35`) {
+    console.log(`You will probably like a music band "Hurts"`);
+  } else if (anyPerson.ageRange === `45-65`) {
+    console.log(`Don't you wanna listen to some relaxing violin music?`);
+  } else {
+    console.log(`Let's play some rock and roll!`);
+  }
+}
+suggestMusic(person1);
+suggestMusic(person2);
+
+const dog = {
+  name: `MuhtarIshin`,
+  speak() {
+    console.log(`woof-woof`);
+  },
+};
+dog.speak();
+
+const me = {
+  name: {
+    firstName: `Sergei`,
+    secondName: `Trifonov`,
+  },
+  location: {
+    streetNumber: 570,
+    street: `Mayakovskiy`,
+    city: `Ruzaevka`,
+    region: `Mordovia`,
+    country: `Russian Federation`,
+  },
+  getAddress() {
+    return `${this.name.firstName} ${this.name.secondName}, ${this.location.streetNumber} ${this.location.street}, ${this.location.city}, ${this.location.region}, ${this.location.country} `;
+  },
+};
+
+console.log(me);
+console.log(me.name.secondName);
+
+console.log(me.getAddress());
+
+// function getAddress() {
+//   return `${this.name.firstName} ${this.name.secondName}, ${this.location.streetNumber} ${this.location.street}, ${this.location.city}, ${this.location.region}, ${this.location.country} `;
+// }
+
+// // Return function with binded context (this)
+// console.log(getAddress.bind(me)());
+
+// // call function with pointed context
+// console.log(getAddress.call(me, ));
+
+// // the same as .call, but with array for second argument
+// console.log(getAddress.apply(me, ));
