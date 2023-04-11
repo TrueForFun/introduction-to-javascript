@@ -169,6 +169,9 @@ const me = {
   name: {
     firstName: `Sergei`,
     secondName: `Trifonov`,
+    logMeOut() {
+      console.log(this);
+    },
   },
   location: {
     streetNumber: 570,
@@ -187,6 +190,9 @@ console.log(me.name.secondName);
 
 console.log(me.getAddress());
 
+console.log(me.name.logMeOut());
+me.name.firstName = `Vladimir`;
+console.log(me.name.logMeOut());
 // function getAddress() {
 //   return `${this.name.firstName} ${this.name.secondName}, ${this.location.streetNumber} ${this.location.street}, ${this.location.city}, ${this.location.region}, ${this.location.country} `;
 // }
@@ -199,3 +205,68 @@ console.log(me.getAddress());
 
 // // the same as .call, but with array for second argument
 // console.log(getAddress.apply(me, ));
+
+const dayOfTheWeek = [
+  `Monday`,
+  `Tuesday`,
+  `Wednesday`,
+  `Thursday`,
+  `Friday`,
+  `Saturday`,
+  `Sunday`,
+];
+console.log(dayOfTheWeek);
+console.log(dayOfTheWeek[0]);
+console.log(dayOfTheWeek[6]);
+
+const primeNumbers = [1, 2, 3, 5, 7, 9, 13, 15, 19];
+console.log(primeNumbers.length);
+console.log(primeNumbers.join(`no`));
+
+const courses = [
+  { teacher: `Kyle Simpson`, course: `JS Function Lite` },
+  { teacher: `Sarah Drasner`, course: `Intro to Vue` },
+  { teacher: `Brian Holt`, course: `Complete Intro to React v3` },
+  { teacher: `Steve Keney`, course: `State Management` },
+];
+
+console.log(courses);
+courses.push({ teacher: `Sean Larkin`, course: `Webpack` });
+
+console.log(courses);
+const theLastCourse = courses.pop();
+console.log(theLastCourse);
+courses[4] = { teacher: `Sergey Trifonov`, course: `Boxing` };
+// Next biltin allows to take out some lines by the number of their index. And also to insert/replace something instead
+const takeAwayCourse = courses.splice(3, 2, {
+  teacher: `Examole`,
+  course: `Example`,
+});
+console.log(takeAwayCourse);
+console.log(courses);
+
+for (let i = 0; i < dayOfTheWeek.length; i++) {
+  console.log(dayOfTheWeek[i].toUpperCase());
+}
+
+dayOfTheWeek.forEach(function (day) {
+  console.log(day);
+});
+// so here I guess a function forEach includes another function that takes an array line as a paramater
+
+const newDaysOfAWeek = dayOfTheWeek.map(function (day) {
+  return day.toUpperCase();
+});
+console.log(newDaysOfAWeek);
+
+const numbersToSort = [1, 33, 5, 67, 7, 78, 9];
+console.log(
+  numbersToSort.sort(function (num1, num2) {
+    if (num1 > num2) {
+      return 1;
+    } else if (num1 < num2) {
+      return -1;
+    }
+    return 0;
+  })
+);
