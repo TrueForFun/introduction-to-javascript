@@ -270,3 +270,44 @@ console.log(
     return 0;
   })
 );
+
+const strings = [`a`, `c`, `b`, `d`];
+console.log(
+  strings
+    .map(function (string) {
+      return string.toUpperCase();
+    })
+    .sort()
+);
+console.log(strings.map((string) => string.toUpperCase()));
+
+const x = `the point is nothing`;
+
+console.log(x.split(``));
+console.log(x.split(``).map((l) => l.toUpperCase()));
+console.log(
+  x
+    .split(``)
+    .map((s) => s.toUpperCase())
+    .join(``)
+);
+console.log(
+  x
+    .split(``)
+    .filter((s) => s !== `o`)
+    .join(``)
+);
+
+const a = 24;
+const b = 75;
+const y = 10;
+const isTrue = true;
+if (a !== b) {
+  console.log(`They are not equal`);
+}
+if (a === b && b === y) {
+  console.log(`All of them are equal`);
+}
+if (isTrue || a === b) {
+  console.log(`This is or statement`);
+}

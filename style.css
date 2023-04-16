@@ -1,0 +1,23 @@
+.red-square {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+.new-button {
+  width: 150px;
+  height: 50px;
+}
+.input {
+  height: 45px;
+  border-radius: 4px;
+  border: 15px;
+  margin: 2rem;
+}
+.color-box {
+  background-color: blue;
+  height: 120px;
+  width: 120px;
+}
+.button-container {
+  margin: 1rem;
+}
